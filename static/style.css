@@ -63,11 +63,18 @@ body {
     outline-offset: 3px;
 }
 
-.dashboard-link {
+.brand-controls {
     position: fixed;
     z-index: 10;
     top: 18px;
     left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.dashboard-link {
     display: inline-flex;
     align-items: center;
     gap: 9px;
@@ -144,6 +151,18 @@ body {
     width: 18px;
     height: 18px;
     fill: currentColor;
+}
+
+.brand-logo {
+    display: block;
+    width: 112px;
+    height: 58px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    object-fit: contain;
 }
 
 .container {
@@ -749,15 +768,10 @@ body.analytics-page {
 }
 
 @media (max-width: 760px) {
-    .dashboard-link {
+    .brand-controls {
         top: 66px;
         left: 12px;
-        gap: 0;
-        padding: 11px;
-    }
-
-    .dashboard-link span {
-        display: none;
+        gap: 6px;
     }
 
     .social-links {
@@ -768,11 +782,11 @@ body.analytics-page {
     }
 
     body:not(.analytics-page) {
-        padding: 124px 12px 24px;
+        padding: 180px 12px 24px;
     }
 
     body.analytics-page {
-        padding: 124px 12px 16px;
+        padding: 180px 12px 16px;
     }
 }
 

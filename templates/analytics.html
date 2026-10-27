@@ -17,13 +17,16 @@
     <a href="{{ url_for('analytics') }}" aria-current="page">📊 Analytics</a>
 </nav>
 
-<a class="dashboard-link" href="https://project-dashboard-xhvj.onrender.com/" aria-label="Back to dashboard" title="Back to dashboard">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M19 11H7.83l4.88-4.88L11.3 4.7 4 12l7.3 7.3 1.41-1.42L7.83 13H19v-2Z"/>
-        <path d="M20 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 16H4V5h16v14Z"/>
-    </svg>
-    <span>Back to dashboard</span>
-</a>
+<div class="brand-controls">
+    <img class="brand-logo" src="{{ url_for('static', filename='logo1.png') }}" alt="Beverage Quality Control logo">
+    <a class="dashboard-link" href="https://project-dashboard-xhvj.onrender.com/" aria-label="Back to dashboard" title="Back to dashboard">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 11H7.83l4.88-4.88L11.3 4.7 4 12l7.3 7.3 1.41-1.42L7.83 13H19v-2Z"/>
+            <path d="M20 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 16H4V5h16v14Z"/>
+        </svg>
+        <span>Back to dashboard</span>
+    </a>
+</div>
 
 <div class="social-links" aria-label="Social profiles">
     <a href="https://github.com/Nishantju" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">

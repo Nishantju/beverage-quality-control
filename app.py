@@ -34,9 +34,6 @@ from src.config import (
 
 app = Flask(__name__)
 
-
-
-
 configure_database(app)
 with app.app_context():
     db.create_all()
