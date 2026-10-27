@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prediction History</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav class="navigation" aria-label="Main navigation">
+
+    <a href="{{ url_for('home') }}">🏠 Home</a>
+
+    <a href="{{ url_for('history') }}" aria-current="page">📜 History</a>
+    <a href="{{ url_for('analytics') }}">📊 Analytics</a>
+
+</nav>
+
+<a class="dashboard-link" href="https://project-dashboard-xhvj.onrender.com/" aria-label="Back to dashboard" title="Back to dashboard">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M19 11H7.83l4.88-4.88L11.3 4.7 4 12l7.3 7.3 1.41-1.42L7.83 13H19v-2Z"/>
+        <path d="M20 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm0 16H4V5h16v14Z"/>
+    </svg>
+    <span>Back to dashboard</span>
+</a>
+
+<div class="social-links" aria-label="Social profiles">
+    <a href="https://github.com/Nishantju" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.1c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 .1.76 2.38 3.42 1.7.1-.72.39-1.2.7-1.48-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.05 1.15a10.6 10.6 0 0 1 5.55 0c2.11-1.44 3.05-1.15 3.05-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.29-2.61 5.23-5.1 5.5.4.35.75 1.02.75 2.06v3.05c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+        </svg>
+        <span>GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/nishant40dev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.7H4.96V9.13h2.97v9.57ZM6.45 7.82a1.72 1.72 0 1 1 0-3.44 1.72 1.72 0 0 1 0 3.44Zm12.25 10.88h-2.97v-4.66c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.74H9.42V9.13h2.85v1.31h.04c.4-.75 1.37-1.55 2.82-1.55 3.02 0 3.57 1.99 3.57 4.58v5.23Z"/>
+        </svg>
+        <span>LinkedIn</span>
+    </a>
+</div>
+
+
+
+<div class="container">
+
+    <h1>Prediction History</h1>
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Date & Time </th>
+
+                <th>Beverage </th>
+
+                <th>Logistic Regression </th>
+
+                <th>Support Vector Machine </th>
+
+                <th>Gaussian Naive Bayes </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for row in history %}
+
+            <tr>
+
+                <td>
+                    {{ row.created_at.strftime("%d-%m-%Y %H:%M:%S") }}
+                </td>
+
+                <td>
+                    {{ row.beverage }}
+                </td>
+
+                <td>
+                    {{ row.logistic_quality }}
+                    <br>
+                    ({{ row.logistic_confidence }}%)
+                </td>
+
+                <td>
+                    {{ row.svm_quality }}
+                    <br>
+                    ({{ row.svm_confidence }}%)
+                </td>
+
+                <td>
+                    {{ row.naive_quality }}
+                    <br>
+                    ({{ row.naive_confidence }}%)
+                </td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+</body>
+
+</html>
