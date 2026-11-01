@@ -345,13 +345,22 @@ button:hover {
 @media (max-width: 560px) {
     .navigation {
         top: 12px;
+        right: 12px;
+        left: 12px;
+        justify-content: space-between;
         gap: 4px;
+        width: auto;
+        max-width: none;
         padding: 6px;
+        transform: none;
     }
 
     .navigation a {
-        padding: 10px 14px;
-        font-size: 0.9rem;
+        flex: 1 1 0;
+        min-width: 0;
+        gap: 4px;
+        padding: 10px 6px;
+        font-size: 0.82rem;
     }
 
     .social-links a {
